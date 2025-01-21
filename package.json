@@ -1,0 +1,15 @@
+{
+  "name": "workorders",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^7.2.1"
+  },
+  "scripts": {
+    "test": "",
+    "server": "yarn --cwd backend serve",
+    "client": "yarn --cwd frontend start",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  }
+}

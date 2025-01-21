@@ -1,0 +1,133 @@
+scalar Date
+scalar DateTime
+
+type AuthPayload {
+  id: Int
+  username: String
+  role: String
+  token: String
+}
+
+type Client {
+  clientId: Int
+  firstName: String
+  lastName: String
+  clientEmail: String
+}
+
+type WorkOrder {
+  woId: Int
+  dateBegin: Date
+  dateEnd: Date
+  clientName: String
+  clientEmail: String
+  device: String
+  status: String
+  description: String
+  timeBegin: String
+  timeEnd: String
+  spentTime: String
+  carBool: String
+  parkingBool: String
+  interrupter: Boolean
+  part1: String
+  part2: String
+  part3: String
+  price1: String
+  price2: String
+  price3: String
+  totalAmount: String
+}
+
+type Query {
+  getUsers: [AuthPayload]
+  getUser(id: Int, username: String, role: String): [AuthPayload]
+  getClients: [Client]
+  getWorkOrders: [WorkOrder]
+  getWorkOrder(
+    woId: Int
+    dateBegin: Date
+    dateEnd: Date
+    clientName: String
+    clientEmail: String
+    device: String
+    status: String
+    description: String
+    timeBegin: String
+    timeEnd: String
+    spentTime: String
+    carBool: String
+    parkingBool: String
+    part1: String
+    part2: String
+    part3: String
+    totalAmount: String
+    dueDate1: Date
+  ): [WorkOrder]
+}
+
+type Mutation {
+  signup(id: Int, username: String, password: String, role: String): AuthPayload
+  login(username: String, password: String): AuthPayload
+  removeUser(id: Int): AuthPayload
+  updateUser(
+    id: Int
+    username: String
+    password: String
+    role: String
+  ): AuthPayload
+  addClient(
+    clientId: Int
+    firstName: String
+    lastName: String
+    clientEmail: String
+  ): Client
+  removeClient(clientId: Int): Client
+  addWorkOrder(
+    woId: Int
+    dateBegin: Date
+    dateEnd: Date
+    clientName: String
+    clientEmail: String
+    device: String
+    status: String
+    description: String
+    timeBegin: String
+    timeEnd: String
+    spentTime: String
+    carBool: String
+    parkingBool: String
+    interrupter: Boolean
+    part1: String
+    part2: String
+    part3: String
+    price1: String
+    price2: String
+    price3: String
+    totalAmount: String
+  ): WorkOrder
+  removeWorkOrder(woId: Int): WorkOrder
+  updateWorkOrder(
+    woId: Int
+    dateBegin: Date
+    dateEnd: Date
+    clientName: String
+    clientEmail: String
+    device: String
+    status: String
+    description: String
+    timeBegin: String
+    timeEnd: String
+    spentTime: String
+    carBool: String
+    parkingBool: String
+    interrupter: Boolean
+    part1: String
+    part2: String
+    part3: String
+    price1: String
+    price2: String
+    price3: String
+    totalAmount: String
+  ): WorkOrder
+}

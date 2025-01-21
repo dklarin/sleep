@@ -1,0 +1,68 @@
+mutation {
+  signup(id: 3, username: "use", password: "pass", role: "admin") {
+    id
+    username
+    role
+    token
+    __typename
+  }
+}
+
+mutation {
+  login(username: "user", password: "user") {
+    id
+    username
+    role
+    token
+  }
+}
+
+query {
+  getUsers {
+    id
+    username
+    role
+    token
+    __typename
+  }
+}
+
+mutation {
+  addClient(clientId: 3, firstName: "la", lastName: "la", clientEmail: "mail") {
+    clientId
+    firstName
+    lastName
+    clientEmail
+    __typename
+  }
+}
+
+query {
+  getClients {
+    clientId
+    firstName
+    lastName
+    clientEmail
+    __typename
+  }
+}
+
+mutation {
+  updateWorkOrder(woId: 1, clientName: "ime", clientEmail: "email") {
+    woId
+    clientName
+    clientEmail
+    spentTime
+    carBool
+    parkingBool
+    totalAmount
+    dueDate
+    description
+    material
+    notice
+    status
+  }
+}
+
+
+
