@@ -20,3 +20,8 @@ Frontend
 
 yarn add typescript
 yarn add react-router-dom
+
+## Korisnički podatci
+
+1. Admin: korisničko ime: admin, lozinka: admin
+2. User: korisničko ime: user, lozinka: user
